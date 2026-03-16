@@ -38,7 +38,7 @@ scene.add(tiltedEarth) ;
 const loader= new THREE.TextureLoader()
 const geometry = new THREE.IcosahedronGeometry(1 , 12 ) ;
 const material = new THREE.MeshStandardMaterial({
-    map : loader.load("public/images/earthmap1k.jpg"),
+    map : loader.load("/images/earthmap1k.jpg"),
 }) ;//standard interacts with light
 
 const ourEarth = new THREE.Mesh(geometry , material) ; //mesh would be container for geometry and material
@@ -48,7 +48,7 @@ const stars= getStarfield({numStars : 2000}) ;
 scene.add(stars) ;
 
 const nightMaterial = new THREE.MeshBasicMaterial({
-    map:loader.load("public/images/earthnightmap1k.jpg") ,
+    map:loader.load("/images/earthnightmap1k.jpg") ,
     blending : THREE.AdditiveBlending ,
     transparent : true,
     opacity: 0.8
@@ -58,7 +58,7 @@ nightEarth.scale.set(1.003 , 1.003 , 1.003) ; //to avoid z fighting
 tiltedEarth.add(nightEarth) ;
 
 const cloudMat=new THREE.MeshStandardMaterial({
-    map :loader.load("public/images/2k_earth_clouds.jpg"),
+    map :loader.load("/images/2k_earth_clouds.jpg"),
     transparent : true ,
     opacity : 0.8 ,
     blending : THREE.AdditiveBlending ,})
